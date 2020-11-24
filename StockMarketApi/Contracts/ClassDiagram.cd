@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="StockMarket.InfoProvider.Robinhood.Contracts.HistoricalQuote">
+    <Position X="5.75" Y="4" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAQAMAAAiAIQAAAAAAAAAAAIgAAAAAAA=</HashCode>
+      <FileName>HistoricalQuote.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="StockMarket.InfoProvider.Robinhood.Contracts.Quote">
+    <Position X="11.75" Y="2" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>ACSAQAAAABgACAAEAAAAAAAQCFBAAAAAAAAAEACACAA=</HashCode>
+      <FileName>Quote.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="StockMarket.InfoProvider.Robinhood.Contracts.Internal.HistoricalQuoteResponse">
+    <Position X="5.5" Y="2" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAACAAAAAAAAAAAAAAAAAAAiAAAAAAAAAAAAAAACAA=</HashCode>
+      <FileName>Internal\HistoricalQuoteResponse.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="StockMarket.InfoProvider.Robinhood.Contracts.Internal.TokenResponse">
+    <Position X="14.75" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAABAIA=</HashCode>
+      <FileName>Internal\TokenResponse.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="StockMarket.InfoProvider.Robinhood.Contracts.Requests.HistoricalQuoteRequest">
+    <Position X="8.25" Y="2" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAIACgA=</HashCode>
+      <FileName>Requests\HistoricalQuoteRequest.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="StockMarket.InfoProvider.Robinhood.Contracts.Requests.ApiAddress">
+    <Position X="3.75" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAACAAAAAIAAAAAAAAAAAAAgAAAAAAAAAAQAAAAAAA=</HashCode>
+      <FileName>Requests\ApiAddress.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Enum Name="StockMarket.InfoProvider.Robinhood.Contracts.Enum.HistoricalBounds">
+    <Position X="8" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEAAAAAAAAAAAgAAAAAAAAAEAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Enum\HistoricalBounds.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="StockMarket.InfoProvider.Robinhood.Contracts.Enum.HistoricalInterval">
+    <Position X="8" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAIAAAAAAAAAAAAAAAAAAAAAAAQAAAAIAAAAA=</HashCode>
+      <FileName>Enum\HistoricalInterval.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="StockMarket.InfoProvider.Robinhood.Contracts.Enum.HistoricalSpan">
+    <Position X="9.75" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAJAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAA=</HashCode>
+      <FileName>Enum\HistoricalSpan.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

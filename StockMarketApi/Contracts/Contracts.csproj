@@ -1,0 +1,21 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.1</TargetFramework>
+    <AssemblyName>MA.Content.Services.StockMarketApi.Contracts</AssemblyName>
+    <RootNamespace>MA.Content.Services.StockMarketApi.Contracts</RootNamespace>
+    <ApplicationIcon></ApplicationIcon>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Internal\**" />
+    <EmbeddedResource Remove="Internal\**" />
+    <None Remove="Internal\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="MA.Content.Framework.Utils.Extensions" Version="1.4.0" />
+    <PackageReference Include="MA.Content.Framework.Utils.Security.Remediation" Version="1.2.0.10" />
+  </ItemGroup>
+
+</Project>

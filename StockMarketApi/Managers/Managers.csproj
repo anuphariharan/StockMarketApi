@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.1</TargetFramework>
+    <RootNamespace>MA.Content.Services.StockMarketApi.Managers</RootNamespace>
+    <AssemblyName>MA.Content.Services.StockMarketApi.Managers</AssemblyName>
+    <ApplicationIcon></ApplicationIcon>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\DataAccess\DataAccess.csproj" />
+    <ProjectReference Include="..\Engines\Engines.csproj" />
+  </ItemGroup>
+
+</Project>

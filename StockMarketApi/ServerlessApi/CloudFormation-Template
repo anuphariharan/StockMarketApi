@@ -1,0 +1,143 @@
+﻿{
+  "AWSTemplateFormatVersion": "2010-09-09",
+  "Outputs": {
+    "ApiURL": {
+      "Description": "API endpoint URL for environment",
+      "Value": {
+        "Fn::Sub": "https://${ServerlessRestApi}.execute-api.${AWS::Region}.amazonaws.com/"
+      }
+    }
+  },
+  "Description": "An AWS Serverless Application that uses the ASP.NET Core framework running in Amazon Lambda.",
+  "Resources": {
+    "AspNetCoreFunctionProxyResourcePermissionProd": {
+      "Type": "AWS::Lambda::Permission",
+      "Properties": {
+        "Action": "lambda:InvokeFunction",
+        "Principal": "apigateway.amazonaws.com",
+        "FunctionName": {
+          "Ref": "AspNetCoreFunction"
+        },
+        "SourceArn": {
+          "Fn::Sub": [
+            "arn:aws:execute-api:${AWS::Region}:${AWS::AccountId}:${__ApiId__}/${__Stage__}/*/*",
+            {
+              "__Stage__": "*",
+              "__ApiId__": {
+                "Ref": "ServerlessRestApi"
+              }
+            }
+          ]
+        }
+      }
+    },
+    "ServerlessRestApiProdStage": {
+      "Type": "AWS::ApiGateway::Stage",
+      "Properties": {
+        "DeploymentId": {
+          "Ref": "ServerlessRestApiDeployment"
+        },
+        "RestApiId": {
+          "Ref": "ServerlessRestApi"
+        },
+        "StageName": "Prod"
+      }
+    },
+    "AspNetCoreFunctionRootResourcePermissionProd": {
+      "Type": "AWS::Lambda::Permission",
+      "Properties": {
+        "Action": "lambda:InvokeFunction",
+        "Principal": "apigateway.amazonaws.com",
+        "FunctionName": {
+          "Ref": "AspNetCoreFunction"
+        },
+        "SourceArn": {
+          "Fn::Sub": [
+            "arn:aws:execute-api:${AWS::Region}:${AWS::AccountId}:${__ApiId__}/${__Stage__}/*/",
+            {
+              "__Stage__": "*",
+              "__ApiId__": {
+                "Ref": "ServerlessRestApi"
+              }
+            }
+          ]
+        }
+      }
+    },
+    "ServerlessRestApiDeployment": {
+      "Type": "AWS::ApiGateway::Deployment",
+      "Properties": {
+        "RestApiId": {
+          "Ref": "ServerlessRestApi"
+        },
+        "Description": "RestApi deployment id: ",
+        "StageName": "Stage"
+      }
+    },
+    "AspNetCoreFunction": {
+      "Type": "AWS::Lambda::Function",
+      "Properties": {
+        "Tags": [
+          {
+            "Value": "ANUP NAIR",
+            "Key": "lambda:createdBy"
+          }
+        ],
+        "MemorySize": 256,
+        "Handler": "ServerlessApi::ServerlessApi.LambdaEntryPoint::FunctionHandlerAsync",
+        "Role": "arn:aws:iam::081217818326:role/MIT_AWS_Lambda_Base",
+        "Timeout": 30,
+        "Runtime": "dotnetcore3.1",
+        "VpcConfig": {
+          "SecurityGroupIds": [
+            "sg-057cb5c216e82a986"
+          ],
+          "SubnetIds": [
+            "subnet-0d20462cde798f632",
+            "subnet-0993bf067ebb2eec0"
+          ]
+        }
+      }
+    },
+    "ServerlessRestApi": {
+      "Type": "AWS::ApiGateway::RestApi",
+      "Properties": {
+        "Body": {
+          "info": {
+            "version": "1.0",
+            "title": {
+              "Ref": "AWS::StackName"
+            }
+          },
+          "paths": {
+            "/{proxy+}": {
+              "x-amazon-apigateway-any-method": {
+                "x-amazon-apigateway-integration": {
+                  "httpMethod": "POST",
+                  "type": "aws_proxy",
+                  "uri": {
+                    "Fn::Sub": "arn:aws:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${AspNetCoreFunction.Arn}/invocations"
+                  }
+                },
+                "responses": {}
+              }
+            },
+            "/": {
+              "x-amazon-apigateway-any-method": {
+                "x-amazon-apigateway-integration": {
+                  "httpMethod": "POST",
+                  "type": "aws_proxy",
+                  "uri": {
+                    "Fn::Sub": "arn:aws:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${AspNetCoreFunction.Arn}/invocations"
+                  }
+                },
+                "responses": {}
+              }
+            }
+          },
+          "swagger": "2.0"
+        }
+      }
+    }
+  }
+}
