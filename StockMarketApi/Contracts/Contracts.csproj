@@ -13,9 +13,4 @@
     <None Remove="Internal\**" />
   </ItemGroup>
 
-  <ItemGroup>
-    <PackageReference Include="MA.Content.Framework.Utils.Extensions" Version="1.4.0" />
-    <PackageReference Include="MA.Content.Framework.Utils.Security.Remediation" Version="1.2.0.10" />
-  </ItemGroup>
-
 </Project>
