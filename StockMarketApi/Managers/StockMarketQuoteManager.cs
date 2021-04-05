@@ -6,7 +6,7 @@ using StockMarket.InfoProvider.Robinhood.Contracts.Requests;
 using StockMarket.InfoProvider.Robinhood.Contracts;
 using System.Threading.Tasks;
 
-namespace MA.Content.Services.StockMarketApi.Managers
+namespace Anup.Services.StockMarketApi.Managers
 {
     public class StockMarketQuoteManager : IStockMarketQuoteManager
     {

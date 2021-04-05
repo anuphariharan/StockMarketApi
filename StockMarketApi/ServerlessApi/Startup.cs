@@ -3,11 +3,10 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using MA.Content.Framework.Utils.Security.Remediation;
 using Robinhood.Client;
 using System;
 using Microsoft.OpenApi.Models;
-using MA.Content.Services.StockMarketApi.Managers;
+using Anup.Services.StockMarketApi.Managers;
 
 namespace ServerlessApi
 {
@@ -34,7 +33,6 @@ namespace ServerlessApi
             services.AddAWSService<Amazon.S3.IAmazonS3>();
             services.AddMvcCore(options =>
             {
-                options.Filters.Add(typeof(ModelValidatorAttribute));
             });
 
             services.AddTransient<IStockMarketQuoteManager, StockMarketQuoteManager>();

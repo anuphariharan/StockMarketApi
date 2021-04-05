@@ -1,4 +1,4 @@
-using MA.Content.Services.StockMarketApi.Managers;
+using Anup.Services.StockMarketApi.Managers;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using StockMarket.InfoProvider.Robinhood.Contracts.Requests;

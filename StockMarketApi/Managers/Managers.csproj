@@ -2,8 +2,8 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.1</TargetFramework>
-    <RootNamespace>MA.Content.Services.StockMarketApi.Managers</RootNamespace>
-    <AssemblyName>MA.Content.Services.StockMarketApi.Managers</AssemblyName>
+    <RootNamespace>Anup.Services.StockMarketApi.Managers</RootNamespace>
+    <AssemblyName>Anup.Services.StockMarketApi.Managers</AssemblyName>
     <ApplicationIcon></ApplicationIcon>
   </PropertyGroup>
 

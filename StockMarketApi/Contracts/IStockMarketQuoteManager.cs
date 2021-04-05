@@ -3,7 +3,7 @@ using StockMarket.InfoProvider.Robinhood.Contracts.Requests;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace MA.Content.Services.StockMarketApi.Managers
+namespace Anup.Services.StockMarketApi.Managers
 {
     public interface IStockMarketQuoteManager
     {
